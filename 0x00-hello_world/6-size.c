@@ -3,7 +3,7 @@
 *main -Entry Level
 *return: always zero (success)
 **/
-int main(void)
+int main(void)// specifies no argument by main
 {
 	char a;
 	int b;
