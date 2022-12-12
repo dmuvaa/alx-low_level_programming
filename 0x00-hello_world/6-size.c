@@ -1,9 +1,6 @@
 #include<stdio.h>
 /**
 * main -Entry Level
-*
-* Desciption
-*
 * return: always zero (success)
 **/
 int main(void)
