@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
-*main -Entry Level
-*return: always zero (success)
+* main -Entry Level
+* return: always zero (success)
 **/
 int main(void)
 {
