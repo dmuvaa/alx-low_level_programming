@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
-* main: Entry Level
+* main - Entry Level
 * return: always zero (success)
 **/
 int main(void)
