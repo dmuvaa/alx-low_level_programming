@@ -2,14 +2,14 @@
 #include<stdio.h>
 /**
 *main - Entry Point
-*Print all to base 
-*return: to 0
+*Print all to base
+*return: always to 0
 */
 int main(void)
 {
 	int i = '0';
-	for (i = '0'; i <= '9'; i++)
 
+	for (i = '0'; i <= '9'; i++)
 	{
 	putchar(i);
 	}
