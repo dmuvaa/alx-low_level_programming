@@ -1,3 +1,4 @@
+#include<stdlib.h>
 #include<stdio.h>
 /**
 *main- Entry Point
@@ -6,8 +7,14 @@
 **/
 int main (void)
 {
-	int char (int putchar)
+	char c = 'a';
 
+	for ( c= 'a'; c <= 'z', c++)
+	{
+	putchar(c); 
+	}
+
+	putchar('\n)
 	return (0);
 }
 	
