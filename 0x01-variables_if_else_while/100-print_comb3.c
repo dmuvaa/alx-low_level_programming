@@ -12,8 +12,6 @@ int main(void)
 	{
 	for (b = a + 1; b <= 10; b++)
 	{
-	if (b > a)
-	{
 	putchar((a % 10) + '0');
 	putchar((b % 10) + '0');
 	if (a == 8 && b == 9)
@@ -21,7 +19,6 @@ int main(void)
 	{
 	putchar(',');
 	putchar(' ');
-	}
 	}
 	}
 	}
