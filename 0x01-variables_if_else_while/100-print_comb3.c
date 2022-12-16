@@ -1,4 +1,3 @@
-#include<stdlib.h>
 #include<stdio.h>
 /**
 *main - main function
@@ -9,15 +8,16 @@ int main(void)
 {
 	int a, b;
 
-	for (a = 48; a <= 56; a++)
+	for (a = 0; a < 9; a++)
 	{
-	for (b = 49; b <= 57; b++)
+	for (b = a + 1; b <= 10; b++)
 	{
 	if (b > a)
 	{
-	putchar(a + '0');
-	putchar(b + '0');
-	if (a != 56 || b != 57)
+	putchar((a % 10) + '0');
+	putchar((b % 10) + '0');
+	if (a == 8 && b == 9)
+	continue;
 	{
 	putchar(',');
 	putchar(' ');
