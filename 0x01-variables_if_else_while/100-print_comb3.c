@@ -11,9 +11,9 @@ int main(void)
 
 	for (a = 48; a <= 56; a++)
 	{
-	for (b = a + 1; b <= 57; b++)
+	for (b = 49; b <= 57; b++)
 	{
-	if (a < b)
+	if (b > a)
 	{
 	putchar(a + '0');
 	putchar(b + '0');
