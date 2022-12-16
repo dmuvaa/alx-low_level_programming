@@ -17,11 +17,10 @@ int main(void)
 	{
 	putchar(a + '0');
 	putchar(b + '0');
-	if (a + b < 24)
+	if (a != 56 || b != 57)
 	{
 	putchar(',');
 	putchar(' ');
-	if (a != 56 || b != 57)
 	}
 	}
 	}
