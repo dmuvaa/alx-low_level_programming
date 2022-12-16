@@ -5,15 +5,15 @@
 *
 *Return: always 0
 */
-int main (void)
+int main(void)
 {
 	int a, b;
 
-	for (a = '0'; a < '8'; a++)
+	for (a = 48; a <= 56; a++)
 	{
-	for (b = a + 1; b < '9'; b++)
+	for (b = a + 1; b <= 57; b++)
 	{
-	if (a != b)
+	if (a < b)
 	{
 	putchar(a + '0');
 	putchar(b + '0');
@@ -21,6 +21,7 @@ int main (void)
 	{
 	putchar(',');
 	putchar(' ');
+	if (a != 56 || b != 57)
 	}
 	}
 	}
