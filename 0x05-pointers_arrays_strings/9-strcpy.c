@@ -2,8 +2,8 @@
 
 /**
  * *_strcpy - copy the string pointed to by src
- * @*dest: buffer to be pointed
- * @str: String to check
+ * @dest: buffer to be pointed
+ * @src: String to check
  * Return: 0 is success
  */
 
