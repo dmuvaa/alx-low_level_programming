@@ -10,14 +10,19 @@
 
 int _isupper(int c)
 {
-	int c;
+	char c;
 
-	for(c = 0; c++)
-	if(c < 0)
-		return(1);
+	for(c = 'A'; c <= 'Z'; c++)
 	{
-		else
+
+	if (_isupper(c))
+	{
+		_putchar('c');
+		return(1);
+	}
+	else
 		{
+			_putchar('c');
 			return(0);
 		}
 	}
