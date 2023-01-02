@@ -1,8 +1,8 @@
-#include "main.h"
+include "main.h"
 
 /**
- * print_numbers - Print numbers
- * @c: numbers to be printed
+ * print_numbers - Prints numbers 0 to 9
+ * @c: characters to print
  * Return: void
  */
 
