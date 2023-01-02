@@ -12,18 +12,9 @@ int _isupper(int c)
 {
 	char c;
 
-	for(c = 'A'; c <= 'Z'; c++)
-	{
+	if(c >= 'A'; c <= 'Z')
 
-	if (_isupper(c))
-	{
-		_putchar('c');
-		return(1);
-	}
+		return (1);
 	else
-		{
-			_putchar('c');
-			return(0);
-		}
-	}
+		return (0);
 }
