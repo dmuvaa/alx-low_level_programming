@@ -5,14 +5,15 @@
  * @*s: first character to be filled
  * @b: second character
  * n: unsigned integer
- * Return: Always 0
+ * Return: s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	char *s;
-	char b;
-	unsigned int n;
+	unsigned int i;
+
+	for (i = 0; i < 10; i++)
 	{
-		memset(*s, b, n);
+		s[i] = b;
 	}
+	return (s);
 }
