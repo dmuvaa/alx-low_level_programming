@@ -3,20 +3,19 @@
 /**
  * _puts_recursion - function that puts a string
  * @s: character to be printed
- * @Return: Returns s
+ * Return: void
  */
 
 void _puts_recursion(char *s)
 {
-	if (s == 1)
-		return 1;
+	if (*s)
+	{
+		_putchar(*s);
+		_puts_recursion(s + 1);
+	}
 	else
-		return s;
-}
-
-int main(void)
-{
-	_puts_recursion(s);
-	return s;
+	{
+		_putchar('\n');
+	}
 
 }
