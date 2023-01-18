@@ -1,11 +1,11 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef _DOG_H_
+#define _DOG_H_
 
 struct dog
 {
 	char *name;
-	float age;
 	char *owner;
+	float age;
 }
 
 #endif
