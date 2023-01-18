@@ -5,6 +5,8 @@
  * dog_t - Typedef for struct dog
  */
 
+typedef struct dog dog_t;
+
 /**
  * struct dog - elements for dogs
  * @name: name of dog
