@@ -5,7 +5,6 @@
  * @size: size of the array
  * @action: pointer to the function to use
  * @array: array of the pointer
- * @size_t: size of funtion pointer
  * Return: void
  */
 
