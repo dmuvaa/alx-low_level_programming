@@ -5,7 +5,7 @@
 /**
  * print_c - print a char
  * @c: character to print
- * Return: vid
+ * Return: void
  */
 
 void print_c(va_list c)
