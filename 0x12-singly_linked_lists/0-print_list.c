@@ -3,27 +3,28 @@
 #include <string.h>
 #include "lists.h"
 
-struct list_t{
-	int n;
-	struct list_t *next;
-}list_t;
+/**
+ * print_list - check the code for Holberton School students
+ * @h: name of the list
+ * Return: the number of nodes
+ */
 
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;
-	const list_t *current = h;
+	int count = 0;
 
-	printf("[");
-	while (current != NULL)
+	while (h)
 	{
-		if (current->next != NULL)
-			printf("%d, ", current->n);
+		if (h->str == NULL)
+		{
+			printf("[0] (nil)\n");
+		}
 		else
-			printf("%d", current->n);
-		current = current->next;
+		{
+			printf("[%d] %s\n", h->len, h->str);
+		}
 		count++;
+		h = h->next;
 	}
-	printf("]\n");
-	
 	return count;
 }
