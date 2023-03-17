@@ -5,31 +5,41 @@
 
 /**
  * add_dnodeint - adds anew node at the beginning of the list
- * @dlistint_t - pointer  node
- * @head: pointer to hea
- * @n: new node
+ * @head: pointer to head of the list
+ * @n: integer value of the new node
  *
- * return: the address of the new element, or NULL if it failed
+ * Return: the address of the new element, or NULL if it failed
  *
  */
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *newnode;
+	dlistint_t *h;
 
-	newnode = (dlistint_t*)malloc(sizeof(dlistint_t));
+	newnode = (dlistint_t *)malloc(sizeof(dlistint_t));
+
+	if (newnode == NULL)
+	{
+		return (NULL);
+	}
+
 	newnode->n = n;
-	newnode->next = *head;
-	*head = newnode;
+	newnode->prev = NULL;
+	h = *head;
 
 	if (head != NULL)
 	{
-		while (head != NULL)
-		{
-			printf("%i ", newnode->n);
-			newnode = newnode->next;
-		}
-		 printf("\n");
+		while (h->prev != NULL)
+			h = h->prev;
 	}
-	return(newnode);
+	newnode->next = h;
+
+	if (h != NULL)
+	{
+		h->prev = newnode;
+	}
+	*head = newnode;
+
+	return (newnode);
 }
