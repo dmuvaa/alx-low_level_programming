@@ -2,7 +2,9 @@
 
 /**
  * free_dlistint -  frees a dlistint_t list
- * @head - pointer to the next node
+ * @head: head of the list
+ *
+ * Return: no return
  */
 
 void free_dlistint(dlistint_t *head)
