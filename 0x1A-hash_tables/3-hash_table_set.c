@@ -2,6 +2,7 @@
 
 /**
  * hash_table_set - adds an element to the table
+ * @ht: pointer to the hash table
  * @key: node key
  * @value: node value
  *
@@ -17,6 +18,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	unsigned long int index;
 	hash_node_t *node;
+
+	if (update_node_value(node, key, value))
+	{
+		return (1);
+	}
+
+	node = create_new_node(key, value);
+	if (!node)
+	{
+		return (0);
+	}
+
+	node->next = ht->array[index];
+	ht->array[index] = node;
+
+	return (1);
+}
+/
 
 	index = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[index];
