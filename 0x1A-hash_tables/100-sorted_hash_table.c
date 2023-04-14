@@ -11,6 +11,7 @@
 shash_node_t *shash_node_create(const char *key, const char *value)
 {
 	shash_node_t *node = calloc(1, sizeof(shash_node_t));
+
 	if (!node)
 		return (NULL);
 
@@ -33,6 +34,14 @@ shash_node_t *shash_node_create(const char *key, const char *value)
 
 	return (node);
 }
+
+/**
+ * shash_sorted_insert - insert a node into the sorted linked list
+ * @ht: the hash table
+ * @new_node: the new node to be inserted
+ *
+ */
+
 void shash_sorted_insert(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *tmp = NULL;
@@ -226,9 +235,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 	node = ht->stail;
 	while (node != NULL)
 	{
-		printf("'%s':  '%s'", node->key, node->value);
+		printf("'%s': '%s'", node->key, node->value);
 		if (node->sprev != NULL)
-			printf(",  ");
+			printf(", ");
 		node = node->sprev;
 	}
 	puts("}");
