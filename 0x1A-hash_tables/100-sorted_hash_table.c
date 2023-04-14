@@ -1,6 +1,92 @@
 #include "hash_tables.h"
 
 /**
+ * shash_node_create - create a new sorted hash node
+ * @key: the key
+ * @value: the value
+ *
+ * Return: pointer to the newly created node, or NULL on failure
+ */
+
+shash_node_t *shash_node_create(const char *key, const char *value)
+{
+	shash_node_t *node = calloc(1, sizeof(shash_node_t));
+	if (!node)
+		return (NULL);
+
+	node->key = strdup(key);
+	node->value = strdup(value);
+
+	if (!node->key || !node->value)
+	{
+		if (node->key)
+			free(node->key);
+		if (node->value)
+			free(node->value);
+		free(node);
+		return (NULL);
+	}
+
+	node->next = NULL;
+	node->sprev = NULL;
+	node->snext = NULL;
+
+	return (node);
+}
+void shash_sorted_insert(shash_table_t *ht, shash_node_t *node)
+{
+	shash_node_t *tmp = NULL;
+
+	if (!ht->shead)
+	{
+		ht->shead = node;
+		ht->stail = node;
+		return;
+	}
+
+	tmp = ht->shead;
+	while (tmp && strcmp(node->key, tmp->key) > 0)
+		tmp = tmp->snext;
+
+	if (!tmp)
+	{
+		node->sprev = ht->stail;
+		ht->stail->snext = node;
+		ht->stail = node;
+	}
+	else
+	{
+		node->snext = tmp;
+		node->sprev = tmp->sprev;
+		if (tmp->sprev)
+			tmp->sprev->snext = node;
+		else
+			ht->shead = node;
+		tmp->sprev = node;
+	}
+}
+
+/**
+ * shash_sorted_delete - delete the sorted list from a hash table
+ * @ht: the hash table
+ */
+
+void shash_sorted_delete(shash_table_t *ht)
+{
+	shash_node_t *tmp = ht->shead;
+	shash_node_t *next = NULL;
+
+	while (tmp)
+	{
+		next = tmp->snext;
+		free(tmp->key);
+		free(tmp->value);
+		free(tmp);
+		tmp = next;
+	}
+}
+
+/**
  * shash_table_create - create a new sorted hash table
  * @size: size of the hash table
  *
