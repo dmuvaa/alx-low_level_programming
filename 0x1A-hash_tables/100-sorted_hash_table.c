@@ -38,7 +38,7 @@ shash_node_t *shash_node_create(const char *key, const char *value)
 /**
  * shash_sorted_insert - insert a node into the sorted linked list
  * @ht: the hash table
- * @new_node: the new node to be inserted
+ * @node: the new node to be inserted
  *
  */
 
