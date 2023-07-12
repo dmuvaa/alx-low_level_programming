@@ -6,6 +6,7 @@
  * linear_search - function that searches for a value in an array
  * @array: array to be searched
  * @size: size of the array
+ * @value: value to search for
  * Return: -1 if value is NULL
  */
 
